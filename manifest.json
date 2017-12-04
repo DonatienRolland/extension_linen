@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Linen",
+  "description": "Linen help you to make the good choice want you are shopping",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
