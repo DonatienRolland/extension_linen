@@ -1,4 +1,4 @@
-console.log("my formated data:");
+
 
 
 const brand_name = document.querySelector('.product-description a:nth-of-type(2) strong').innerText
