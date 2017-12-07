@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-  window.setTimeout(function(){
 
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {data: 'test'}, function(response) {
 
       function insertHtml(data) {
         console.log("data is", data);
+        const container = document.getElementById("container");
         const impact_detail = data.impact_detail_html;
         container.insertAdjacentHTML("beforeend", impact_detail);
         const alternatives = data.alternative_html;
@@ -47,5 +47,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  }, 3000);
 });
