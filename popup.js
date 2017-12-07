@@ -1,57 +1,53 @@
-
 document.addEventListener('DOMContentLoaded', function() {
+  window.setTimeout(function(){
+
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {data: 'test'}, function(response) {
+
+      function insertHtml(data) {
+        console.log("data is", data);
+        const impact_detail = data.impact_detail_html;
+        container.insertAdjacentHTML("beforeend", impact_detail);
+        const alternatives = data.alternative_html;
+        container.insertAdjacentHTML("beforeend", alternatives);
+      }
+
       if (response) {
         const dataToSend = response.data;
-        fetch("http://localhost:3000/api/v1/items",
-        {
-          method: "POST",
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(dataToSend)
-        })
-        .then(function(res){
-          console.log(res.statusText);
-        })
-        .catch(function(data){
-          console.error( data )
-        });
+        // Call GET item avec le product_code
+        // ->SUCcESS = affiche des data du JSON reçu
+        // ->INTROUVZBLE = call POST itms avec le dataToSend ET affiche les data du JSPN reçu
+
+        url = 'http://localhost:3000/api/v1/items/'+dataToSend['product_code']
+        fetch(url, { credentials: 'include' })
+          .then((response) => {
+            console.log("response was", response);
+            if(response.ok) {
+              console.log("response was ok");
+              response.json().then(insertHtml);
+            } else {
+              fetch("http://localhost:3000/api/v1/items",
+              {
+                method: "POST",
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToSend)
+              })
+              .then(response => response.json())
+              .then(insertHtml)
+            }
+          })
+          // .catch(function(data){
+          //   console.error( data );
+          // });
       } else {
         console.log("Not there, inject contentscript");
       }
     });
   });
+
+  }, 3000);
 });
 
-/////////////////// Relation with Rails ///////////////
-document.addEventListener('DOMContentLoaded', () => {
-  getShow();
-  getAlternatives();
-  const container = document.getElementById("container");
-});
-
-function getShow(){
-  url = 'http://localhost:3000/api/v1/items/1210863'
-  fetch(url, { credentials: 'include' })
-    .then(response => response.json())
-    .then((data) => {
-      const impact_detail = data.impact_detail_html
-      container.insertAdjacentHTML("beforeend", impact_detail)
-    });
-};
-
-function getAlternatives(){
-  url = 'http://localhost:3000/api/v1/items/1210863'
-  fetch(url, { credentials: 'include' })
-    .then(response => response.json())
-    .then((data) => {
-      const alternatives = data.alternative_html
-      container.insertAdjacentHTML("beforeend", alternatives)
-    });
-};
-
-
-/////////////////////////////////////////////////////////
