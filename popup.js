@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {data: 'test'}, function(response) {
 
+
       function insertHtml(data) {
+        const container = document.getElementById("container")
         console.log("data is", data);
         const impact_detail = data.impact_detail_html;
         container.insertAdjacentHTML("beforeend", impact_detail);
