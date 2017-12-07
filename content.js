@@ -1,7 +1,6 @@
 chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
   console.log("DOM fully loaded and parsed");
 
-
   console.log("my formated data:");
 
   const brand_name = document.querySelector('.product-description a:nth-of-type(2) strong').innerText
