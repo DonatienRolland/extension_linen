@@ -25,15 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-/////////////////// Relation with Rails ///////////////
+/////////////////// Relation from Rails ///////////////
 document.addEventListener('DOMContentLoaded', () => {
-  getShow();
   getAlternatives();
+  // getShow();
   const container = document.getElementById("container");
 });
 
+// test product_order : 1191283 or 1210864 or 1008623
 function getShow(){
-  url = 'http://localhost:3000/api/v1/items/1210863'
+  url = 'http://localhost:3000/api/v1/items/1210864'
   fetch(url, { credentials: 'include' })
     .then(response => response.json())
     .then((data) => {
@@ -43,7 +44,7 @@ function getShow(){
 };
 
 function getAlternatives(){
-  url = 'http://localhost:3000/api/v1/items/1210863'
+  url = 'http://localhost:3000/api/v1/items/1210864'
   fetch(url, { credentials: 'include' })
     .then(response => response.json())
     .then((data) => {
@@ -51,6 +52,5 @@ function getAlternatives(){
       container.insertAdjacentHTML("beforeend", alternatives)
     });
 };
-
 
 /////////////////////////////////////////////////////////
