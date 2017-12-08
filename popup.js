@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
         container.insertAdjacentHTML("beforeend", alternatives);
       }
 
+      console.log('===============');
+      console.log(response);
+
       if (response) {
         const dataToSend = response.data;
         // Call GET item avec le product_code

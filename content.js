@@ -10,15 +10,15 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
   const url = window.location.href
   const image = document.querySelectorAll('.fullImageContainer img')[1].src
   const brand_name = document.querySelector('.product-description a:nth-of-type(2) strong').innerText
+  const gender = document.querySelector('#bc2').innerText
   // const name = document.querySelector('.about-me').innerText.split("%")[1].split(".")[0].replace(/^\s+/g, '')
   // const percent = document.querySelector('.about-me').innerText.split(" : ")[1].split("%")[0]
 
-  // document.querySelector('.about-me').innerText.split(":")[1].split(",") => [" 75% acrylique", " 22% nylon", " 3% élasthanne."]
   console.log("YOOOOOO");
   let assemblings = [];
   document.querySelector('.about-me').innerText.split(":")[1].split(",").forEach(function(assembling){
     assemblings.push({
-      percent: assembling.split("%")[0],
+      percent: assembling.split("%")[0].trim(),
       material: { name: assembling.split("%")[1].trim().replace(/\.$/, "") }
     })
   });
@@ -28,6 +28,7 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
     category: category,
     price: price,
     product_code: product_code,
+    gender: gender,
     photo: image,
     url: url,
     brand: { name: brand_name },
