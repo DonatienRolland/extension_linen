@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // ->SUCcESS = affiche des data du JSON reçu
         // ->INTROUVZBLE = call POST itms avec le dataToSend ET affiche les data du JSPN reçu
 
-        url = 'http://localhost:3000/api/v1/items/'+dataToSend['product_code']
+        url = 'http://www.linenapp.eu/api/v1/items/'+dataToSend['product_code']
         fetch(url, { credentials: 'include' })
           .then((response) => {
             console.log("response was", response);
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
               console.log("response was ok");
               response.json().then(insertHtml);
             } else {
-              fetch("http://localhost:3000/api/v1/items",
+              fetch("http://www.linenapp.eu/api/v1/items",
               {
                 method: "POST",
                 headers: {
