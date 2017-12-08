@@ -51,3 +51,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+// activate the btn to add and item to linen list
+const addItemToList = (event) => {
+  fetch("http://localhost:3000/selections", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ query: event.currentTarget.value })
+  })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data.hits); // Look at local_names.default
+    });
+}
+
+const addToListBtn = document.getElementById("add-item-to-list");
+addToListBtn.addEventListener("click", addItemToList);
+
+// activate the redirection to linen list
+const redirectToLinenList = (event) => {
+  fetch("http://localhost:3000/selections")
+}
+
+const goToLinenListBtn = document.getElementById("Go-to-list");
+goToLinenListBtn.addEventListener("click", redirectToLinenList);
