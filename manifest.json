@@ -1,10 +1,10 @@
 {
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Linen",
   "description": "Linen help you to make the good choice want you are shopping",
-  "version": "1.1",
+  "version": "1.2",
 
   "browser_action": {
     "default_icon": "icon.png",
