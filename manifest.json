@@ -3,7 +3,7 @@
   "manifest_version": 3,
 
   "name": "Linen",
-  "description": "Linen help you to make the good choice want you are shopping",
+  "description": "Linen helps you to make the good choice want you are shopping",
   "version": "1.2",
 
   "browser_action": {
