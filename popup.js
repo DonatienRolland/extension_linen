@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const dataToSend = response.data;
         // Call GET item avec le product_code
         // ->SUCcESS = affiche des data du JSON reçu
-        // ->INTROUVZBLE = call POST itms avec le dataToSend ET affiche les data du JSPN reçu
+        // ->INTROUVABLE = call POST itms avec le dataToSend ET affiche les data du JSPN reçu
 
         url = 'http://www.linenapp.eu/api/v1/items/'+dataToSend['product_code']
         fetch(url, { credentials: 'include' })

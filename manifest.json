@@ -1,9 +1,9 @@
 {
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "manifest_version": 3,
+  "manifest_version": 2,
 
   "name": "Linen",
-  "description": "Linen helps you to make the good choice want you are shopping",
+  "description": "Linen helps you make the good decisions when you are shopping",
   "version": "1.2",
 
   "browser_action": {
@@ -15,7 +15,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["http://*.asos.fr/asos/*/prd"],
       "js": ["content.js"]
     }
   ],
