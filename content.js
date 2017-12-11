@@ -1,9 +1,4 @@
-console.log("LOADING CONTENT");
-
 chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
-  console.log("DOM fully loaded and parsed");
-
-  console.log("my formated data:");
 
   const title = document.querySelector('.product-hero > h1').innerText.split(" - ")[1]
   const category = document.querySelector('.product-description a:nth-of-type(1) strong').innerText
@@ -16,7 +11,6 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
   // const name = document.querySelector('.about-me').innerText.split("%")[1].split(".")[0].replace(/^\s+/g, '')
   // const percent = document.querySelector('.about-me').innerText.split(" : ")[1].split("%")[0]
 
-  console.log("YOOOOOO");
   let assemblings = [];
   document.querySelector('.about-me').innerText.split(":")[1].split(",").forEach(function(assembling){
     assemblings.push({
@@ -41,6 +35,7 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
     assemblings: assemblings
   }
 
+  console.log("I am in content.js BLAH")
   // console.log(JSON.stringify(formatedData));
   sendResponse({data: formatedData});
 });

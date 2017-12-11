@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+  console.log("In DOMContentLoaded");
 
   window.setTimeout(function() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -10,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log("data is", data);
           const impact_detail = data.impact_detail_html;
           container.insertAdjacentHTML("beforeend", impact_detail);
-          const alternatives = data.alternative_html;
-          container.insertAdjacentHTML("beforeend", alternatives);
+          // const alternatives = data.alternative_html;
+          // container.insertAdjacentHTML("beforeend", alternatives);
 
           const addToListBtn = document.getElementById("add-item-to-list")  ;
           console.log(addToListBtn)
@@ -19,6 +20,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
           const goToLinenListBtn = document.getElementById("go-to-list");
           goToLinenListBtn.addEventListener("click", redirectToLinenList);
+
+          var slider = tns({
+            container: '.my-slider',
+            items: 1,
+            slideBy: 'page',
+            // autoplay: true,
+            loop: false,
+            nav: false,
+            controls: false
+          });
+
+          const previousAlternative = document.getElementById("previous-arrow");
+          previousAlternative.addEventListener("click", (event) => {
+            console.log("hello prev");
+            slider.goTo('prev')
+          });
+
+          const nextAlternative = document.getElementById("next-arrow");
+          nextAlternative.addEventListener("click", (event) => {
+            console.log("hello next");
+            slider.goTo('next')
+          });
         }
 
         console.log('===============');
@@ -29,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
           // Call GET item avec le product_code
           // ->SUCcESS = affiche des data du JSON reçu
           // ->INTROUVABLE = call POST itms avec le dataToSend ET affiche les data du JSPN reçu
-
           url = 'http://localhost:3000/api/v1/items/'+dataToSend['product_code']
           fetch(url, { credentials: 'include' })
             .then((response) => {
@@ -37,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
               if(response.ok) {
                 console.log("response was ok");
                 response.json().then(insertHtml);
+
               } else {
                 fetch("http://localhost:3000/api/v1/items",
                 {
@@ -49,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(response => response.json())
                 .then(insertHtml)
+
               }
             })
             // .catch(function(data){
@@ -82,6 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("current link is", url);
     chrome.tabs.create({ url: url });
   }
+
+  // const goToPreviousAlternative = function () {
+  //   slider.goTo('prev');
+  // };
+
+  // const goToNextAlternative = function () {
+  //   slider.goTo('next');
+  // };
 
   }, 3000);
 });
