@@ -1,0 +1,156 @@
+body {
+  width: 450px;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #49D0AC;
+}
+#container {
+  padding: 5px;
+}
+/* Navbar */
+.navbar-extension {
+  background-color: #49D0AC;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+.navbar-extension-content {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.navbar-extension-logo {
+  flex: 0 0 35px;
+  width: 36px;
+  height: 36px;
+}
+.navbar-extension-linen {
+  color: white;
+  margin: 0;
+  padding-left: 6px;
+}
+/* item evaluation */
+.item-evaluation {
+  display: flex;
+  padding: 20px;
+}
+.general-mark {
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  color: white;
+  background-color: #EE5F5B;
+  border-radius: 1px;
+  position: relative;
+}
+.general-mark h1 {
+  margin: 0;
+}
+.general-mark p {
+  margin: 0;
+}
+.detail-info {
+  color: rgba(0, 0, 0, 0.8);
+  flex-grow: 1;
+  padding-left: 10px;
+  position: relative;
+}
+.detail-info h2 {
+  margin: 0;
+  font-weight: normal;
+}
+.big-mark {
+  font-size: 64px;
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  right: 25px;
+  left: 25px;
+}
+.rating {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.impact-info-block {
+  padding: 10px 0;
+}
+.impact-info {
+  display: flex;
+  justify-content: space-between;
+}
+.impact-info h3 {
+  flex-grow: 1;
+  margin: 0px;
+  padding: 3px 0;
+}
+.impact-info p {
+  flex: 0 0 50px;
+  margin: 0px;
+}
+#add-item-to-list {
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  font-size: 20px;
+}
+.alternative-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+.alternative-mark {
+  background-color: #32B796;
+  flex: 0 0 80px;
+  height: 80px;
+  width: 80px;
+}
+.alternative-mark {
+  background-color: #32B796;
+  flex: 0 0 80px;
+  height: 80px;
+  width: 80px;
+}
+.alternative-photo {
+  height: 80px;
+  border: 2px solid #49D0AC;
+  border-radius: 1px;
+}
+.alternative-big-mark {
+  font-size: 40px;
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  right: 15px;
+  left: 15px;
+}
+.detail-info h1 {
+  padding-bottom: 10px;
+  font-size: 20px;
+  margin: 0;
+  font-weight: normal;
+}
+.extension-btn {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background-color: #49D0AC;
+  border-radius: 1px;
+  margin: 20px;
+}
+#go-to-list {
+  color: white;
+  font-size: 20px;
+  margin: auto;
+}
+.icons-alternatives {
+  width: 18px;
+  height: 18px;
+  padding-top: 30px;
+}
+.alternative-evaluation {
+  padding: 2px;
+}
