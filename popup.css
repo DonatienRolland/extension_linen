@@ -5,14 +5,14 @@ body {
 }
 a {
   text-decoration: none;
-  color: #49D0AC;
+  color: #077087;
 }
 #container {
   padding: 5px;
 }
 /* Navbar */
 .navbar-extension {
-  background-color: #49D0AC;
+  background-color: #077087;
   height: 45px;
   display: flex;
   align-items: center;
@@ -136,8 +136,8 @@ a {
 .extension-btn {
   display: flex;
   align-items: center;
-  height: 30px;
-  background-color: #49D0AC;
+  height: 40px;
+  background-color: #077087;
   border-radius: 1px;
   margin: 20px;
 }
@@ -153,4 +153,28 @@ a {
 }
 .alternative-evaluation {
   padding: 2px;
+}
+.main_desc {
+  margin-bottom:35px;
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.main_desc > div{
+  margin:0 auto;
+  font-size:0.8em;
+  margin-bottom:10px;
+}
+section div.floating{
+  margin: 0 auto;
+  text-align:center;
+  height:190px;
+  vertical-align: middle;
+  line-height:146px;
+  position: relative;
+  display: table-cell;
+  width: 200px;
+}
+section div.floating img{
+  vertical-align: middle;
 }
