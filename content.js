@@ -7,9 +7,13 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
   const url = window.location.href
   const image = document.querySelectorAll('.fullImageContainer img')[1].src
   const brand_name = document.querySelector('.product-description a:nth-of-type(2) strong').innerText
-  const gender = document.querySelector('#bc2').innerText
-  // const name = document.querySelector('.about-me').innerText.split("%")[1].split(".")[0].replace(/^\s+/g, '')
-  // const percent = document.querySelector('.about-me').innerText.split(" : ")[1].split("%")[0]
+  const womanCategory = document.querySelector("[data-reactid='31']");
+  let gender;
+  if (womanCategory.classList.contains("_2O3Pt9j")) {
+    gender = "woman"
+  } else {
+    gender = "man"
+  }
 
   let assemblings = [];
   document.querySelector('.about-me').innerText.split(":")[1].split(",").forEach(function(assembling){
@@ -28,10 +32,6 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
     photo: image,
     url: url,
     brand: { name: brand_name },
-    // assemblings: [{
-    //   percent: percent,
-    //   material: { name: name },
-    // }],
     assemblings: assemblings
   }
 
