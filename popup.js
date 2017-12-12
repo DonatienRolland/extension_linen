@@ -94,7 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       body: JSON.stringify({ item_id: event.target.dataset.value })
     })
-      .then(response => response.json())
+      .then((response) => {
+        console.log("update btn");
+        const changeBtn = document.querySelector("#add-item-to-list")
+        changeBtn.outerHTML = "<p class='added' ><em>This product is already in your selection !</em></p>"
+      })
       .then((data) => {
         console.log(data.hits); // Look at local_names.default
       });
