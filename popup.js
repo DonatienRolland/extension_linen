@@ -24,10 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
           const addToListBtn = document.getElementById("add-item-to-list")  ;
           console.log(addToListBtn)
-          addToListBtn.addEventListener("click", addItemToList);
+          addToListBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            addItemToList(e);
+          });
 
           const goToLinenListBtn = document.getElementById("go-to-list");
           goToLinenListBtn.addEventListener("click", redirectToLinenList);
+
+          const goToALternativeBtn = document.querySelector(".alternative-link");
+          goToALternativeBtn.addEventListener("click", redirectToAlternative);
 
           var slider = tns({
             container: '.my-slider',
@@ -40,18 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
             controlsText: ['<', '>'],
             loop: true,
             arrowKeys: true
-          });
-
-          const previousAlternative = document.getElementById("previous-arrow");
-          previousAlternative.addEventListener("click", (event) => {
-            console.log("hello prev");
-            slider.goTo('prev')
-          });
-
-          const nextAlternative = document.getElementById("next-arrow");
-          nextAlternative.addEventListener("click", (event) => {
-            console.log("hello next");
-            slider.goTo('next')
           });
         }
 
@@ -98,12 +92,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // activate the btn to add and item to linen list
   const addItemToList = (event) => {
+    console.log(event)
     fetch("http://localhost:3000/selections", {
       method: "POST",
+      credentials: 'include',
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ query: event.currentTarget.value })
+      body: JSON.stringify({ item_id: event.target.dataset.value })
     })
       .then(response => response.json())
       .then((data) => {
@@ -117,14 +113,12 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("current link is", url);
     chrome.tabs.create({ url: url });
   }
-
-  // const goToPreviousAlternative = function () {
-  //   slider.goTo('prev');
-  // };
-
-  // const goToNextAlternative = function () {
-  //   slider.goTo('next');
-  // };
+  // activate the redirection to linen list
+  const redirectToAlternative = (event) => {
+    url = event.currentTarget.href;
+    console.log("current link is", url);
+    chrome.tabs.create({ url: url });
+  }
 
   }, 3000);
 });
