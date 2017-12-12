@@ -36,7 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // autoplay: true,
             loop: false,
             nav: false,
-            controls: false
+            controls: true,
+            controlsText: ['<', '>'],
+            loop: true,
+            arrowKeys: true
           });
 
           const previousAlternative = document.getElementById("previous-arrow");
