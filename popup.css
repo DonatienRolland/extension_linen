@@ -7,9 +7,6 @@ a {
   text-decoration: none;
   color: #077087;
 }
-#container {
-  padding: 5px;
-}
 /* Navbar */
 .navbar-extension {
   background-color: #077087;
@@ -90,6 +87,7 @@ a {
 .impact-info p {
   flex: 0 0 50px;
   margin: 0px;
+  text-align: left;
 }
 #add-item-to-list {
   position: absolute;
@@ -146,13 +144,14 @@ a {
   font-size: 20px;
   margin: auto;
 }
-.icons-alternatives {
+/*.icons-alternatives {
   width: 18px;
   height: 18px;
   padding-top: 30px;
-}
+  cursor: pointer;
+}*/
 .alternative-evaluation {
-  padding: 2px;
+  padding: 20px;
 }
 .main_desc {
   margin-bottom:35px;
@@ -177,4 +176,27 @@ section div.floating{
 }
 section div.floating img{
   vertical-align: middle;
+}
+.tns-outer {
+  position: relative;
+}
+.tns-controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left:0;
+  right:0;
+  top: 50px;
+}
+
+.tns-controls button {
+  border: none;
+  background: none;
+  transform: scale(1, 2);
+  font-size: 20px;
+  font-weight: lighter;
+  z-index: 2;
+}
+.tns-controls button:focus {
+  outline: none;
 }
