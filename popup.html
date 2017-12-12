@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
-<head>
+  <head>
+    <link type="text/css" rel="stylesheet" href="./popup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.3.11/tiny-slider.css">
+    <title>Linen, make the best choice</title>
+  </head>
 
-  <link type="text/css" rel="stylesheet" href="./popup.css" />
-  <script src="popup.js"></script>
-  <title>Linen, make the best choice</title>
-</head>
 <body>
   <div id="wrapper">
     <div id="content">
@@ -16,69 +16,19 @@
         </div>
       </div>
 
-      <section id="container">
-        <div class="floating"><img src="./img/sad-tshirt.png"/></div>
-        <div class="main_desc">
-          <div><b>Couldn't find any good images for this page.</b></div>
-          <div>The images might not be large enough, or they might be protected or inside a web plugin.</div>
-          <div>Try again on a different page.</div>
-        </div>
-      </section>
-
-      <div id="container">
-        <div class="item-evaluation">
-          <div class="general-mark">
-            <!-- put the proper value -->
-            <h1 class="big-mark">76</h1>
-            <p class="rating">/ 100</p>
-          </div>
-          <div class="detail-info">
-            <!-- put the proper value -->
-            <h2><strong>Pull</strong> by <strong>Asos</strong></h2>
-            <div class="impact-info-block">
-              <div class="impact-info">
-                <h3>CLIMATE</h3>
-                <!-- put the proper value -->
-                <p>5 / 100</p>
-              </div>
-              <div class="impact-info">
-                <h3>WATER</h3>
-                <!-- put the proper value -->
-                <p>5 / 100</p>
-              </div>
-              <div class="impact-info">
-                <h3>AIR</h3>
-                <!-- put the proper value -->
-                <p>5 / 100</p>
-              </div>
-            </div>
-            <a href="#" id="add-item-to-list"><strong>+</strong> Add to my list</a>
-          </div>
-        </div>
-        <h2 class="alternative-title">OTHER OPTIONS</h2>
-        <div class="item-evaluation alternative-evaluation">
-          <img src="https://image.flaticon.com/icons/svg/126/126492.svg" alt="" class="icons-alternatives">
-          <div class="general-mark alternative-mark">
-            <!-- put the proper value -->
-            <h1 class="big-mark alternative-big-mark">10</h1>
-            <p class="rating">/ 100</p>
-          </div>
-          <div class="detail-info">
-            <!-- put the proper value -->
-            <h1>Pull ras de cou en maille duveteuse</h1>
-            <h2><strong>Pull</strong> by <strong>Asos</strong></h2>
-          </div>
-          <!-- put the alternative photo -->
-          <img src="image-asos.jpeg" alt="item title" class="alternative-photo">
-          <img src="https://image.flaticon.com/icons/svg/126/126490.svg" alt="" class="icons-alternatives">
-        </div>
-        <!-- put the alternative photo -->
-        <div class="extension-btn">
-          <a href="#" id="go-to-list">See my Linen List !</a>
-        </div>
-      </div>
-      <script src="popup.js"></script>
+    <div id="container">
     </div>
-  </div>
-</body>
+      
+    <section id="container-error">
+      <div class="floating"><img src="./img/sad-tshirt.png"/></div>
+      <div class="main_desc">
+        <div><b>Couldn't find any good images for this page.</b></div>
+        <div>The images might not be large enough, or they might be protected or inside a web plugin.</div>
+        <div>Try again on a different page.</div>
+      </div>
+    </section>
+    
+    <script src="tiny-slider.js"></script>
+    <script src="popup.js"></script>
+  </body>
 </html>
