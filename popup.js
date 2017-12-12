@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {data: 'test'}, function(response) {
 
+        function errorMessage(data) {
+          const container = document.getElementById("container")
+          container.insertAdjacentHTML("beforeend", impact_detail);
+          const floating = document.getElementById("floating")
+          container.insertAdjacentHTML("beforeend", floating);
+          const main_desc = document.getElementById("main_desc")
+          container.insertAdjacentHTML("beforeend", main_desc);
+        }
 
         function insertHtml(data) {
           const container = document.getElementById("container")
@@ -80,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // });
         } else {
           console.log("Not there, inject contentscript");
-        }
 
+        }
       });
     });
 
