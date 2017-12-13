@@ -49,7 +49,6 @@ h4 {
   width: 120px;
   height: 120px;
   color: white;
-  background-color: #EE5F5B;
   border-radius: 1px;
   position: relative;
 }
@@ -111,7 +110,6 @@ h4 {
   font-weight: lighter;
 }
 .alternative-mark {
-  background-color: #32B796;
   flex: 0 0 80px;
   height: 80px;
   width: 80px;
@@ -212,4 +210,13 @@ section div.floating{
 }
 .tns-controls button:focus {
   outline: none;
+}
+.bad_impact {
+  background-color: #EE5F5B;
+}
+.normal_impact {
+  background-color: #E67E22;
+}
+.good_impact {
+  background-color: #49D0AC;
 }
