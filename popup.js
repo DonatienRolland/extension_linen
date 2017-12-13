@@ -22,10 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const goToLinenListBtn = document.getElementById("go-to-list");
-        goToLinenListBtn.addEventListener("click", redirectToLinenList);
+        if (goToLinenListBtn) {
+          goToLinenListBtn.addEventListener("click", redirectToLinenList);
+        }
 
         const goToALternativeBtn = document.querySelector(".alternative-link");
-        goToALternativeBtn.addEventListener("click", redirectToAlternative);
+        if (goToALternativeBtn) {
+          goToALternativeBtn.addEventListener("click", redirectToAlternative);
+        }
 
         var slider = tns({
           container: '.my-slider',
@@ -49,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Call GET item avec le product_code
         // ->SUCcESS = affiche des data du JSON reçu
         // ->INTROUVABLE = call POST itms avec le dataToSend ET affiche les data du JSPN reçu
-        url = 'http://localhost:3000/api/v1/items/'+dataToSend['product_code']
+        url = 'http://www.linenapp.eu/api/v1/items/'+dataToSend['product_code']
         fetch(url, { credentials: 'include' })
           .then((response) => {
             console.log("response was", response);
@@ -58,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
               response.json().then(insertHtml);
 
             } else {
-              fetch("http://localhost:3000/api/v1/items",
+              fetch("http://www.linenapp.eu/api/v1/items",
               {
                 method: "POST",
                 headers: {
@@ -87,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // activate the btn to add and item to linen list
   const addItemToList = (event) => {
     console.log(event)
-    fetch("http://localhost:3000/selections", {
+    fetch("http://www.linenapp.eu/selections", {
       method: "POST",
       credentials: 'include',
       headers: {
