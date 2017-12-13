@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("data is", data);
         const impact_detail = data.impact_detail_html;
         container.insertAdjacentHTML("beforeend", impact_detail);
-        // const alternatives = data.alternative_html;
-        // container.insertAdjacentHTML("beforeend", alternatives);
 
         const addToListBtn = document.getElementById("add-item-to-list")  ;
         console.log(addToListBtn)
@@ -24,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const goToLinenListBtn = document.getElementById("go-to-list");
         goToLinenListBtn.addEventListener("click", redirectToLinenList);
 
-        const goToALternativeBtn = document.querySelector(".alternative-link");
-        goToALternativeBtn.addEventListener("click", redirectToAlternative);
+        const goToAlternativeBtn = document.querySelector(".alternative-link");
+        goToAlternativeBtn.addEventListener("click", redirectToAlternative);
 
         var slider = tns({
           container: '.my-slider',
@@ -75,10 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
           .then(insertHtml)
       } else {
         console.log("Not there, inject contentscript");
-        const containerError = document.getElementById("container-error")
-        containerError.style.display = 'block'
-        const goToList = document.getElementById("goToLinenListBtn").addEventListener("click", redirectToLinenList);
-        goToList.style.display = 'block'
+        const containerError = document.getElementById("container-error");
+        containerError.style.display = 'block';
+        const goToList = document.getElementById("go-to-list").addEventListener("click", redirectToLinenList);
+        goToList.style.display = 'block';
       }
     });
   });
@@ -94,12 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       body: JSON.stringify({ item_id: event.target.dataset.value })
     })
-      .then((response) => {
-        console.log("update btn");
-        const changeBtn = document.querySelector("#add-item-to-list")
-        changeBtn.outerHTML = "<p class='added' ><em>This product is already in your selection !</em></p>"
-      })
+      .then(response => response.json())
       .then((data) => {
+        console.log(data);
+        const changeBtn = document.querySelector("#add-item-to-list");
+        changeBtn.outerHTML = "<p class='added' ><em>This product is already in your selection !</em></p>";
         console.log(data.hits); // Look at local_names.default
       });
   }
