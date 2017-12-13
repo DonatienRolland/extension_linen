@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("data is", data);
         const impact_detail = data.impact_detail_html;
         container.insertAdjacentHTML("beforeend", impact_detail);
-        // const alternatives = data.alternative_html;
-        // container.insertAdjacentHTML("beforeend", alternatives);
 
         const addToListBtn = document.getElementById("add-item-to-list")  ;
         console.log(addToListBtn)
@@ -99,12 +97,11 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       body: JSON.stringify({ item_id: event.target.dataset.value })
     })
-      .then((response) => {
-        console.log("update btn");
-        const changeBtn = document.querySelector("#add-item-to-list")
-        changeBtn.outerHTML = "<p class='added' ><em>This product is already in your selection !</em></p>"
-      })
+      .then(response => response.json())
       .then((data) => {
+        console.log(data);
+        const changeBtn = document.querySelector("#add-item-to-list");
+        changeBtn.outerHTML = "<p class='added' ><em>This product is already in your selection !</em></p>";
         console.log(data.hits); // Look at local_names.default
       });
   }
