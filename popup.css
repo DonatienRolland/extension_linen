@@ -154,6 +154,9 @@ h4 {
   font-size: 20px;
   margin: auto;
 }
+#go-to-list:focus {
+  outline: none;
+}
 .alternative-evaluation {
   padding: 20px;
   position: relative;
