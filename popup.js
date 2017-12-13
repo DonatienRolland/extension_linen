@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Not there, inject contentscript");
         const containerError = document.getElementById("container-error")
         containerError.style.display = 'block'
-        const goToList = document.getElementById("goToLinenListBtn").addEventListener("click", redirectToLinenList);
+        const goToList = document.getElementById("go-to-list")
+        goToList.addEventListener("click", redirectToLinenList);
         goToList.style.display = 'block'
       }
     });
