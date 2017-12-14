@@ -164,7 +164,7 @@ a#add-item-to-list:hover {
 }
 /* alternative */
 .alternative-title {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .alternative-mark {
   background-color: #32B796;
@@ -179,10 +179,8 @@ a#add-item-to-list:hover {
 .alternative-big-mark {
   font-size: 40px;
   position: absolute;
-  top: 15px;
-  bottom: 15px;
-  right: 15px;
-  left: 15px;
+  top: 13px;
+  left: 13px;
 }
 .alternative-evaluation {
   padding: 20px;
