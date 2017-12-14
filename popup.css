@@ -140,7 +140,7 @@ h4 {
   font-size: 20px;
 }
 a#add-item-to-list:hover {
-    opacity: .8;
+  opacity: .8;
 }
 .added {
   padding: 0 20px;
