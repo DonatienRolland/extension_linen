@@ -259,6 +259,10 @@ section div.floating{
 }
 .white-btn{
   color: white;
+  font-size: 18px;
+}
+#btn-alternative-link {
+  width: 100%;
 }
 /* hover effect on text */
 a.go-to-list:after {
