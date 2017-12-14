@@ -36,9 +36,5 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
   }
 
   console.log("I am in content.js BLAH")
-  // console.log(JSON.stringify(formatedData));
   sendResponse({data: formatedData});
 });
-// const url = 'https://www.linenapp.eu/items'
-// const formatedUrl = url + '?title=' + title.replace(/ /g,"-") + '?product_code=' + product_code.replace(/ /g,"-") + '?category=' + category.replace(/ /g,"-") + '?brand=' + brand_name.replace(/ /g,"-") + '?material_name=' + material_name.replace(/./g, "" ) + ?assembling=' + assembling + '?price=' + price + '?image=' + image
-// return formatedUrl
