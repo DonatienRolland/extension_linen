@@ -1,5 +1,5 @@
 body {
-  width: 450px;
+  width: 360px;
   color: rgba(0, 0, 0, 0.9);
   margin: 0;
   font-family: 'Quicksand', sans-serif;
@@ -124,10 +124,6 @@ h4 {
   margin: 0px;
   text-align: left;
 }
-#add-item-to-list {
-  color: white;
-  font-size: 20px;
-}
 .extension-btn {
   display: flex;
   align-items: center;
@@ -137,32 +133,43 @@ h4 {
   border-radius: 1px;
   margin: 0 20px 20px 20px;
   padding: 0 20px;
+  transition: opacity 0.3s ease;
 }
-/*#go-to-list {
+#add-item-to-list {
   color: white;
   font-size: 20px;
-  margin: auto;
 }
-#go-to-list:focus {
-  outline: none;
-}*/
-.alternative-title {
-  font-size: 30px;
+a#add-item-to-list:hover {
+    opacity: .8;
+}
+.added {
+  padding: 0 20px;
+  margin: 0px;
+}
+.item-ext-title {
+  font-size: 20px;
   text-align: center;
   margin-bottom: 0px;
-  margin-top: 0px;
+  margin-top: 10px;
   font-weight: lighter;
 }
-.alternative-mark {
-  flex: 0 0 80px;
-  height: 80px;
-  width: 80px;
+.detail-info h1 {
+  padding-bottom: 10px;
+  font-size: 20px;
+  margin: 0;
+  font-weight: normal;
+}
+.detail-info h2 {
+  font-size: 20px;
+}
+/* alternative */
+.alternative-title {
+  margin-top: 20px;
 }
 .alternative-mark {
   background-color: #32B796;
-  flex: 0 0 80px;
-  height: 80px;
-  width: 80px;
+  flex: 0 0 84px;
+  height: 84px;
 }
 .alternative-photo {
   height: 80px;
@@ -176,15 +183,6 @@ h4 {
   bottom: 15px;
   right: 15px;
   left: 15px;
-}
-.detail-info h1 {
-  padding-bottom: 10px;
-  font-size: 20px;
-  margin: 0;
-  font-weight: normal;
-}
-.detail-info h2 {
-  font-size: 22px;
 }
 .alternative-evaluation {
   padding: 20px;
@@ -219,6 +217,7 @@ section div.floating{
   padding-top: 30px;
   height:190px;
 }
+/* slide show */
 .tns-outer {
   position: relative;
 }
@@ -242,6 +241,7 @@ section div.floating{
 .tns-controls button:focus {
   outline: none;
 }
+/* impact color */
 .bad_impact {
   background-color: #EE5F5B;
 }
@@ -250,4 +250,16 @@ section div.floating{
 }
 .good_impact {
   background-color: #49D0AC;
+}
+/* hover effect on text */
+a#go-to-list:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s ease;
+}
+a#go-to-list:hover:after {
+    width: 100%;
 }
