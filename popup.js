@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (goToALternativeBtn) {
           goToALternativeBtn.addEventListener("click", redirectToAlternative);
         }
+        const goToALternativeBtn2 = document.getElementById("btn-alternative-link");
+        if (goToALternativeBtn2) {
+          goToALternativeBtn2.addEventListener("click", redirectToAlternative);
+        }
 
         var slider = tns({
           container: '.my-slider',
