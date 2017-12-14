@@ -6,7 +6,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #077087;
+  color: #333;
   font-family: 'Quicksand', sans-serif;
 }
 p {
@@ -25,6 +25,10 @@ h4 {
 }
 #container {
   padding: 5px;
+}
+.btn-center {
+  display: flex;
+  justify-content: center;
 }
 
 /* Navbar */
@@ -126,6 +130,7 @@ h4 {
 }
 .extension-btn {
   display: flex;
+  color: white;
   align-items: center;
   justify-content: space-between;
   height: 40px;
@@ -134,9 +139,9 @@ h4 {
   margin: 0 20px 20px 20px;
   padding: 0 20px;
   transition: opacity 0.3s ease;
+  font-size: 20px;
 }
 #add-item-to-list {
-  color: white;
   font-size: 20px;
 }
 a#add-item-to-list:hover {
@@ -252,15 +257,40 @@ section div.floating{
 .good_impact {
   background-color: #49D0AC;
 }
-/* hover effect on text */
-a#go-to-list:after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width .3s ease;
+.white-btn{
+  color: white;
 }
-a#go-to-list:hover:after {
-    width: 100%;
+/* hover effect on text */
+a.go-to-list:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  transition: width .3s ease;
+  background-color: #333;
+}
+a.go-to-list:hover:after {
+  width: 100%;
+}
+a#go-to-list-white:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  transition: width .3s ease;
+  background-color: white;
+}
+a#go-to-list-white:hover:after {
+  width: 100%;
+}
+a#go-to-list-white:focus {
+  outline: none;
+}
+.simple-link {
+  z-index: 2;
+  color: #333;
+  font-size: 18px;
+}
+.simple-link:focus {
+  outline: none;
 }

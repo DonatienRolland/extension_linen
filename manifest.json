@@ -3,8 +3,8 @@
   "manifest_version": 2,
 
   "name": "Linen",
-  "description": "Linen helps you make the good decisions when you are shopping",
-  "version": "1.2",
+  "description": "Linen helps you make good decisions when you are shopping",
+  "version": "1.6",
 
   "browser_action": {
     "default_icon": "icon.png",
