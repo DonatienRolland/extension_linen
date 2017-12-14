@@ -16,6 +16,10 @@ p {
 h1, h2, h3, h4 {
   font-family: 'Abel', sans-serif;
 }
+h1 {
+  letter-spacing: 1.5px;
+  text-align: center;
+}
 h4 {
   font-size: 14px;
 }
@@ -29,11 +33,12 @@ h4 {
   height: 45px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 .navbar-extension-content {
   display: flex;
   align-items: center;
-  margin: auto;
 }
 .navbar-extension-logo {
   flex: 0 0 35px;
@@ -44,6 +49,18 @@ h4 {
   color: white;
   margin: 0;
   padding-left: 6px;
+}
+#go-to-list {
+  z-index: 2;
+  color: white;
+  font-size: 18px;
+}
+#go-to-list:focus {
+  outline: none;
+}
+/* lack of info */
+#lack-of-info-message {
+  padding: 0 20px;
 }
 /* item evaluation */
 .item-evaluation {
@@ -66,21 +83,24 @@ h4 {
 }
 .detail-info {
   color: rgba(0, 0, 0, 0.8);
-  flex-grow: 1;
   padding-left: 10px;
+  width: calc(100% - 120px - 10px);
   position: relative;
 }
 .detail-info h2 {
   margin: 0;
+  width: 100%;
   font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .big-mark {
-  font-size: 64px;
+  font-size: 55px;
+  font-weight: 600;
   position: absolute;
-  top: 25px;
-  bottom: 25px;
-  right: 25px;
-  left: 25px;
+  top: 20px;
+  left: 18px;
 }
 .rating {
   position: absolute;
@@ -88,11 +108,12 @@ h4 {
   right: 5px;
 }
 .impact-info-block {
-  padding: 10px 0;
+  padding-top: 10px;
 }
 .impact-info {
   display: flex;
   justify-content: space-between;
+  margin-top: 8px;
 }
 .impact-info h3 {
   flex-grow: 1;
@@ -100,21 +121,36 @@ h4 {
   padding: 3px 0;
 }
 .impact-info p {
-  flex: 0 0 80px;
   margin: 0px;
   text-align: left;
 }
 #add-item-to-list {
-  position: absolute;
-  bottom: 0px;
-  right: 5px;
-  font-size: 18px;
+  color: white;
+  font-size: 20px;
 }
+.extension-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  background-color: #077087;
+  border-radius: 1px;
+  margin: 0 20px 20px 20px;
+  padding: 0 20px;
+}
+/*#go-to-list {
+  color: white;
+  font-size: 20px;
+  margin: auto;
+}
+#go-to-list:focus {
+  outline: none;
+}*/
 .alternative-title {
   font-size: 30px;
   text-align: center;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
   font-weight: lighter;
 }
 .alternative-mark {
@@ -149,22 +185,6 @@ h4 {
 }
 .detail-info h2 {
   font-size: 22px;
-}
-.extension-btn {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  background-color: #077087;
-  border-radius: 1px;
-  margin: 20px;
-}
-#go-to-list {
-  color: white;
-  font-size: 20px;
-  margin: auto;
-}
-#go-to-list:focus {
-  outline: none;
 }
 .alternative-evaluation {
   padding: 20px;
