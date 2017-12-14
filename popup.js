@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Call GET item avec le product_code
         // ->SUCcESS = affiche des data du JSON reçu
         // ->INTROUVABLE = call POST itms avec le dataToSend ET affiche les data du JSPN reçu
-        url = 'http://www.linenapp.eu/api/v1/items/'+dataToSend['product_code']
+        url = 'http://localhost:3000/api/v1/items/'+dataToSend['product_code']
         fetch(url, { credentials: 'include' })
           .then((response) => {
             console.log("response was", response);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
               response.json().then(insertHtml);
 
             } else {
-              fetch("http://www.linenapp.eu/api/v1/items",
+              fetch("http://localhost:3000/api/v1/items",
               {
                 method: "POST",
                 headers: {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // activate the btn to add and item to linen list
   const addItemToList = (event) => {
     console.log(event)
-    fetch("http://www.linenapp.eu/selections", {
+    fetch("http://localhost:3000/selections", {
       method: "POST",
       credentials: 'include',
       headers: {
