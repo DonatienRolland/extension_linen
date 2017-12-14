@@ -29,7 +29,7 @@ h4 {
 
 /* Navbar */
 .navbar-extension {
-  background-color: #077087;
+  background-color: #333;
   height: 45px;
   display: flex;
   align-items: center;
@@ -129,7 +129,7 @@ h4 {
   align-items: center;
   justify-content: space-between;
   height: 40px;
-  background-color: #077087;
+  background-color: #333;
   border-radius: 1px;
   margin: 0 20px 20px 20px;
   padding: 0 20px;
@@ -181,6 +181,9 @@ a#add-item-to-list:hover {
   position: absolute;
   top: 13px;
   left: 13px;
+}
+.alternative-info {
+  width: 150px;
 }
 .alternative-evaluation {
   padding: 20px;
