@@ -1,5 +1,6 @@
 body {
   width: 360px;
+  height:550px;
   color: rgba(0, 0, 0, 0.9);
   margin: 0;
   font-family: 'Quicksand', sans-serif;
@@ -131,8 +132,9 @@ h4 {
 .extension-btn {
   display: flex;
   color: white;
+  text-align: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 40px;
   background-color: #333;
   border-radius: 1px;
@@ -141,6 +143,11 @@ h4 {
   transition: opacity 0.3s ease;
   font-size: 20px;
 }
+
+a#btn-alternative-link:hover{
+  opacity: .8;
+}
+
 #add-item-to-list {
   font-size: 20px;
 }
@@ -298,3 +305,4 @@ a#go-to-list-white:focus {
 .simple-link:focus {
   outline: none;
 }
+
